@@ -1,9 +1,9 @@
 package io.github.manoelpiovesan.entities;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.*;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,9 +13,9 @@ import java.util.Map;
 public class Cbo extends PanacheEntity {
 
     @Column(name = "code")
-    private String code;
+    public String code;
     @Column(name = "description")
-    private String description;
+    public String description;
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();

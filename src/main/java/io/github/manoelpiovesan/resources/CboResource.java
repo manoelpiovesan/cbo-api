@@ -1,17 +1,15 @@
 package io.github.manoelpiovesan.resources;
 
 import io.github.manoelpiovesan.entities.Cbo;
-import io.quarkus.hibernate.orm.rest.data.panache.PanacheEntityResource;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 @Path("cbo")
-public class CboResource implements PanacheEntityResource<Cbo, Long> {
+public class CboResource {
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/{code}")
     public Response getByCode(@PathParam("code") String code) {
         Cbo cbo = Cbo.find("code", code).firstResult();
@@ -20,6 +18,15 @@ public class CboResource implements PanacheEntityResource<Cbo, Long> {
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAll(
+            @QueryParam("page") @DefaultValue("0") int page,
+            @QueryParam("size") @DefaultValue("10") int size
+    ) {
+        return Response.ok(Cbo.findAll().page(page, size).list()).build();
     }
 
 }

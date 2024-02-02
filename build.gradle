@@ -13,7 +13,6 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy-client-jaxb'
     implementation 'io.quarkus:quarkus-hibernate-orm-rest-data-panache'
     implementation 'io.quarkus:quarkus-resteasy-client'
-    implementation 'io.quarkus:quarkus-rest-client-reactive'
     implementation 'io.quarkus:quarkus-resteasy-jsonb'
     implementation 'io.quarkus:quarkus-smallrye-openapi'
     implementation 'io.quarkus:quarkus-resteasy'
@@ -23,7 +22,6 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm'
     implementation 'io.quarkus:quarkus-rest-client'
     implementation 'io.quarkus:quarkus-rest-client-jackson'
-    implementation 'io.quarkus:quarkus-resteasy-reactive'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }
