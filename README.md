@@ -9,4 +9,3 @@
 | POSTGRES_DB        | cbo             |
 | POSTGRES_PASSEWORD | <your_password> |
 
-```sh
