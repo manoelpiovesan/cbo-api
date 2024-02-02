@@ -9,3 +9,17 @@
 | POSTGRES_DB        | cbo             |
 | POSTGRES_PASSEWORD | <your_password> |
 
+> e alterar o arquivo application.properties para:
+
+```properties
+quarkus.datasource.username=<your_username>
+quarkus.datasource.password=<your_password>
+```
+
+# Docker
+>Subir container com o banco de dados
+
+```bash
+cd resources/postgres_cvs_init
+docker-compose up -d
+```
