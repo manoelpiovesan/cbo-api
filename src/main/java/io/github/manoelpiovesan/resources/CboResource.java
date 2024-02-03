@@ -21,6 +21,13 @@ public class CboResource {
     }
 
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/count")
+    public Response count() {
+        return Response.ok(Cbo.count()).build();
+    }
+
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAll(
             @QueryParam("page") @DefaultValue("0") int page,
