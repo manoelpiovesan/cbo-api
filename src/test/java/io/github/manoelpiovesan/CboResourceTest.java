@@ -16,6 +16,8 @@ public class CboResourceTest {
 
     private static Map<String, Object> validCboMap = new HashMap<>();
 
+    private static final int cboCount = 2614;
+
     @BeforeAll
     public static void setup() {
         validCboMap.put("code", "010105");
@@ -44,6 +46,17 @@ public class CboResourceTest {
                 .statusCode(200)
                 .body("code", is(validCboMap.get("code")),
                       "description", is(validCboMap.get("description")));
+    }
+
+    @Test
+    @Order(3)
+    public void testCount() {
+        given()
+                .when()
+                .get("/cbo/count")
+                .then()
+                .statusCode(200)
+                .body(is(String.valueOf(cboCount)));
     }
 
 }

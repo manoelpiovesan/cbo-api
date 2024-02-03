@@ -23,3 +23,5 @@ quarkus.datasource.password=<your_password>
 cd resources/postgres_cvs_init
 docker-compose up -d
 ```
+
+
