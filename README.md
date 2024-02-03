@@ -7,7 +7,7 @@
 | POSTGRES_USER      | <your_username> |
 | POSTGRES_HOST      | postgres        |
 | POSTGRES_DB        | cbo             |
-| POSTGRES_PASSEWORD | <your_password> |
+| POSTGRES_PASSWORD | <your_password> |
 
 > e alterar o arquivo application.properties para:
 
@@ -24,5 +24,4 @@ cd resources/postgres_cvs_init
 docker-compose up -d
 ```
 
-# Documentação
-localhost:8080/q/swagger-ui
+
