@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class CboResourceTest {
 
-    private static Map<String, Object> validCboMap = new HashMap<>();
+    private static final Map<String, Object> validCboMap = new HashMap<>();
 
     private static final int cboCount = 2614;
 
